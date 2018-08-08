@@ -2,6 +2,7 @@ API
 ```
 √ /1.0/service.register // 用户注册的api
 √ /1.0/service.login    // 登录的api
+. /1.0/foot.recognize   // 足部识别api
 ```
 
 
@@ -54,9 +55,16 @@ Params:
 ```json
 {
     "data": {
-        "expire": 1530865482, // 过期的时间戳
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzA4NjU0ODIsIm9wZW5JRCI6Im9Mb0VZNDJwTEJOR1p5eEpfNHlBMTZuNkpWOFUifQ.Cf-e2uvtn27DJSs7Ufxilxsn6P2ddDgI_irZ3Qi8e84",
-        "user": {},
+        "_id": "5b6a51e9556edf1f3d6c8577",
+        "openID": "o69nx5GujZFgB2TrZ7PRo0luTD6o",
+        "name": "ボー",
+        "weixinNickname": "ボー",
+        "headImg": "https://wx.qlogo.cn/mmopen/vi_32/zcFiaYibsHnfAAvVNmhiauX6wdRuCBrAvTBUso5DDMG7iaUo42rFyyclPD6ZjiaRIkvVVPQL8qPibl6m2vIiclH1fibLkA/132",
+        "personalPageImg": "https://wx.qlogo.cn/mmopen/vi_32/zcFiaYibsHnfAAvVNmhiauX6wdRuCBrAvTBUso5DDMG7iaUo42rFyyclPD6ZjiaRIkvVVPQL8qPibl6m2vIiclH1fibLkA/132",
+        "gender": 1,
+        "weixinCity": "Los Angeles City",
+        "weixinProvince": "California",
+        "weixinCountry": ""
     },
     "error": "",
     "success": true
@@ -69,3 +77,12 @@ Params:
 Authorization: Bearer <token>
 ```
 
+### Foot recognize
+
+POST /1.0/foot.recognize
+
+#### Request
+
+
+
+#### Response
