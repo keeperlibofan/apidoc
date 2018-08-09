@@ -4,6 +4,7 @@ API
 √ /1.0/service.login    // 登录的api
 . /1.0/foot.recognize   // 足部识别api
 . /1.0/user.addFootData // 添加脚部数据
+. /1.0/user.getFootData // 获取足部数据
 ```
 
 
@@ -102,11 +103,9 @@ Authorization: Bearer <token>
 POST /1.0/foot.recognize
 
 #### Request
-
-POST
-filed
+POST field
 ```json
-foot_images: File
+foot_images: Files // 第一个数据是前足，第二个数据侧足，一个field放俩张图片
 direction: String
 ```
 
@@ -157,3 +156,60 @@ POST /1.0/user.addFootData
     "success": true
 }
 ```
+
+### Get foot data
+
+GET /1.0/user.getFootData
+
+#### Request
+
+No body
+
+#### Response
+
+> example
+```json
+{
+    "data": [
+        {
+            "_id": "5b6a84aa556edf3b840a4ba7",
+            "createAt": 1533785300,
+            "left": {
+                "side_height": 101,
+                "side_2tip": 102,
+                "side_2heel": 103,
+                "length": 104,
+                "width": 105
+            },
+            "right": {
+                "side_height": 101,
+                "side_2tip": 102,
+                "side_2heel": 103,
+                "length": 104,
+                "width": 105
+            }
+        },
+        {
+            "_id": "5b6bb50e556edf4f30ee0d60",
+            "createAt": 1533785358,
+            "left": {
+                "side_height": 101,
+                "side_2tip": 102,
+                "side_2heel": 103,
+                "length": 104,
+                "width": 105
+            },
+            "right": {
+                "side_height": 101,
+                "side_2tip": 102,
+                "side_2heel": 103,
+                "length": 104,
+                "width": 105
+            }
+        }
+    ],
+    "error": "",
+    "success": true
+}
+```
+
