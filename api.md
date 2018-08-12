@@ -9,7 +9,7 @@ API
 . /1.0/user.addAddress              // 添加地址
 . /1.0/user.getAddress              // 获取地址， 返回数据的第一个就是默认地址
 . /1.0/user.deleteAddress           // 根据id删除地址
-x /1.0/user.addShoppingItem         // 生成购物车物品
+. /1.0/user.addShoppingItem         // 生成购物车物品
 x /1.0/user.addShoppingItem         // 删除购物车物品
 
 ```
@@ -303,3 +303,58 @@ POST /1.0/user.deleteAddress
     "success": true
 }
 ```
+
+### get address
+
+GET /1.0/user.getAddress
+
+#### Request
+
+null
+
+#### Response
+
+```json
+{
+    "data": [
+        {
+            "_id": "5b6fc695556edf1abcb38400",
+            "name": "李博帆",
+            "telNum": "15387550833",
+            "province": "hunan",
+            "city": "changsha",
+            "country": "china",
+            "detailInfo": "babababa",
+            "postCode": 43011111
+        },
+        {
+            "_id": "5b6fc694556edf1abcb383ff",
+            "name": "李博帆",
+            "telNum": "15387550833",
+            "province": "hunan",
+            "city": "changsha",
+            "country": "china",
+            "detailInfo": "babababa",
+            "postCode": 43011111
+        },
+        {
+            "_id": "5b6fc690556edf1abcb383fe",
+            "name": "李博帆",
+            "telNum": "15387550833",
+            "province": "hunan",
+            "city": "changsha",
+            "country": "china",
+            "detailInfo": "babababa",
+            "postCode": 43011111
+        }
+    ],
+    "error": "",
+    "success": true
+}
+```
+
+### add shopping item
+
+POST /1.0/user.addShoppingItem
+
+####
