@@ -5,6 +5,13 @@ API
 . /1.0/foot.recognize   // 足部识别api
 . /1.0/user.addFootData // 添加脚部数据
 . /1.0/user.getFootData // 获取足部数据
+. /1.0/user.deleteFootData          // 删除足部数据
+. /1.0/user.addAddress              // 添加地址
+. /1.0/user.getAddress              // 获取地址， 返回数据的第一个就是默认地址
+. /1.0/user.deleteAddress           // 根据id删除地址
+x /1.0/user.addShoppingItem         // 生成购物车物品
+x /1.0/user.addShoppingItem         // 删除购物车物品
+
 ```
 
 
@@ -149,9 +156,10 @@ POST /1.0/user.addFootData
 
 #### Response
 
+>example
 ```json
 {
-    "data": null,
+    "data": String, // 这个string是创建脚数据后系统生成的id
     "error": "",
     "success": true
 }
@@ -213,3 +221,85 @@ No body
 }
 ```
 
+
+### delete foot data
+
+POST /1.0/user.deleteFootData
+
+#### Introduce
+
+根据用户足部数据的id来删除特定的足部数据
+
+#### Request
+>example
+```json
+{
+	"_id": "5b6a84aa556edf3b840a4ba7"
+}
+```
+
+#### Response
+
+>example
+```json
+{
+    "data": null,
+    "error": "",
+    "success": true
+}
+```
+
+### add address
+
+#### Introduce
+添加地址
+
+#### Request
+>example
+```json
+{
+	"name": "李博帆",
+	"telNum": "15387550833",
+	"province": "hunan",
+	"city": "changsha",
+	"country": "china",
+	"detailInfo": "babababa",
+	"postCode": 43011111
+}
+```
+
+#### Response
+
+>example
+```
+{
+    "data": "5b6fc343556edf179cfa5970", // 这个就是用来删除地址的id
+    "error": "",
+    "success": true
+}
+```
+
+
+### delete address
+
+POST /1.0/user.deleteAddress
+
+#### Request
+>example
+
+```json
+{
+	"_id": "5b6fc343556edf179cfa5970"
+}
+```
+
+#### Response
+
+>example
+```json
+{
+    "data": null,
+    "error": "",
+    "success": true
+}
+```
