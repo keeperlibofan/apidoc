@@ -1,17 +1,17 @@
 API
 ```
-√ /1.0/service.register // 用户注册的api
-√ /1.0/service.login    // 登录的api
-. /1.0/foot.recognize   // 足部识别api
-. /1.0/user.addFootData // 添加脚部数据
-. /1.0/user.getFootData // 获取足部数据
+√ /1.0/service.register             // 用户注册的api
+√ /1.0/service.login                // 登录的api
+. /1.0/foot.recognize               // 足部识别api
+. /1.0/user.addFootData             // 添加脚部数据
+. /1.0/user.getFootData             // 获取足部数据
 . /1.0/user.deleteFootData          // 删除足部数据
 . /1.0/user.addAddress              // 添加地址
 . /1.0/user.getAddress              // 获取地址， 返回数据的第一个就是默认地址
 . /1.0/user.deleteAddress           // 根据id删除地址
 . /1.0/user.addShoppingItem         // 生成购物车物品
-x /1.0/user.addShoppingItem         // 删除购物车物品
-
+. /1.0/user.deleteShoppingItem         // 删除购物车物品
+. /1.0/user.getShoppingItem         // 获取购物车信息
 ```
 
 
@@ -357,4 +357,67 @@ null
 
 POST /1.0/user.addShoppingItem
 
-####
+#### Request
+
+```json
+{
+	"type": "sport",   // "daily", "sport"
+	"theme": "scrawl",   // "chemistry", "scrawl", "red"
+	"footID": "5b6bc224556edf5d80fe7520",
+	"npair": 2
+}
+```
+
+#### Response
+
+```json
+{
+    "data": null,
+    "error": "",
+    "success": true
+}
+```
+
+### delete shopping item
+
+POST /1.0/user.deleteShoppingItem
+
+#### Request
+
+```json
+{
+    index: Int     // 需要删除的数据的index
+}
+```
+
+#### Response
+```json
+{
+    "data": null,
+    "error": "",
+    "success": true
+}
+```
+
+### get shopping items
+
+GET /1.0/user.getShoppingItem         // 获取购物车信息
+
+#### Request
+null
+#### Response
+>example
+```json
+{
+    "data": [
+        {
+            "type": "daily",
+            "theme": "red",
+            "footID": "5b6bc224556edf5d80fe7520",
+            "npair": 2
+        }
+    ],
+    "error": "",
+    "success": true
+}
+```
