@@ -3,6 +3,7 @@ API
 √ /1.0/service.register             // 用户注册的api
 √ /1.0/service.login                // 登录的api
 . /1.0/foot.recognize               // 足部识别api
+. /1.0/foot.recognize.url           // 足部识别api url方式
 . /1.0/user.addFootData             // 添加脚部数据
 . /1.0/user.getFootData             // 获取足部数据
 . /1.0/user.deleteFootData          // 删除足部数据
@@ -108,12 +109,24 @@ Authorization: Bearer <token>
 ### Foot recognize
 
 POST /1.0/foot.recognize
+POST /1.0/foot.recognize.url // url识别法
 
 #### Request
 POST field
 ```json
 foot_images: Files // 第一个数据是前足，第二个数据侧足，一个field放俩张图片
 direction: String
+```
+
+>example
+POST
+url 识别法
+```json
+{
+	"front": "https://fitter-foot-1257227594.cos.ap-chengdu.myqcloud.com/2018-8-15/1534308626882wxbfd230984530a8d8.o6zAJs48kw6OQSPq7AWjvq14_ync.5i1N2l91gIOp290e1a37dcaa1ff3f172ef4d1376bd64.jpg",
+	"side": "https://fitter-foot-1257227594.cos.ap-chengdu.myqcloud.com/2018-8-15/1534308640946wxbfd230984530a8d8.o6zAJs48kw6OQSPq7AWjvq14_ync.t1EhYQy1YTgl41f56c3cd6cd3815fefbb6072b022a25.jpg",
+	"direction": "left"
+}
 ```
 
 #### Response
