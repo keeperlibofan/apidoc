@@ -11,8 +11,9 @@ API
 . /1.0/user.getAddress              // 获取地址， 返回数据的第一个就是默认地址
 . /1.0/user.deleteAddress           // 根据id删除地址
 . /1.0/user.addShoppingItem         // 生成购物车物品
-. /1.0/user.deleteShoppingItem         // 删除购物车物品
+. /1.0/user.deleteShoppingItem      // 删除购物车物品
 . /1.0/user.getShoppingItem         // 获取购物车信息
+. /1.0/order.create                 // 生成订单
 ```
 
 
@@ -430,6 +431,36 @@ null
             "npair": 2
         }
     ],
+    "error": "",
+    "success": true
+}
+```
+
+### Order create
+
+POST /1.0/order.create
+
+#### Request
+
+```json
+{
+	"promotionCode": "",
+	"addressID": "5b6fc690556edf1abcb383fe"
+}
+```
+
+#### Response
+
+>example
+```json
+{
+    "data": {
+        "nonceStr": "5E1LdlD8haAVqzJx",
+        "package": "prepay_id=wx161738124645086b3efffa861595111843",
+        "paySign": "0BE555FC4615672A3496EDE8EB8FCA58",
+        "signType": "MD5",
+        "timeStamp": 1534412292
+    },
     "error": "",
     "success": true
 }
