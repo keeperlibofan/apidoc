@@ -14,6 +14,8 @@ API
 . /1.0/user.deleteShoppingItem      // 删除购物车物品
 . /1.0/user.getShoppingItem         // 获取购物车信息
 . /1.0/order.create                 // 生成订单
+. /1.0/answerSheet.create           // 生成问卷
+. /1.0/promotionCode.draw           // 抽取优惠码
 ```
 
 
@@ -440,6 +442,10 @@ null
 
 POST /1.0/order.create
 
+#### Notice
+
+成功请求
+
 #### Request
 
 ```json
@@ -455,13 +461,68 @@ POST /1.0/order.create
 ```json
 {
     "data": {
-        "nonceStr": "5E1LdlD8haAVqzJx",
-        "package": "prepay_id=wx161738124645086b3efffa861595111843",
-        "paySign": "0BE555FC4615672A3496EDE8EB8FCA58",
+        "nonceStr": "s0JjumDj7UMxsKTh",
+        "package": "prepay_id=wx201120244253696dc31ea8312655009410",
+        "paySign": "014CF4F5E278CED6F55139A2073D66F5",
         "signType": "MD5",
-        "timeStamp": 1534412292
+        "timeStamp": 1534735224
     },
     "error": "",
     "success": true
 }
 ```
+
+### AnswerSheet create
+
+POST /answerSheet.create
+
+#### Request
+>example
+```json
+{
+	"quiz_1": 97, // ASCII码 97代表'a'
+	"quiz_2": 97,
+	"quiz_3": 97,
+	"quiz_4": 97
+}
+```
+
+#### Response
+
+>example
+
+```json
+{
+    "data": "5b7cd1a8556edf8052c08baa", // 问卷的id
+    "error": "",
+    "success": true
+}
+```
+
+
+### promotion code draw
+
+GET /promotionCode.draw
+
+#### notice
+
+打完问卷才能获得一次抽奖机会，所以说要先调用答问卷的api
+
+#### Request
+
+no param
+
+#### Response
+
+```json
+{
+    "data": {
+        "promotionCode": "OpmVLn3bRqPP7eI3",
+        "discount": 8,    // 优惠金额 单位 CNY
+    },
+    "error": "",
+    "success": true
+}
+```
+
+
