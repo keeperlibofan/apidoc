@@ -14,6 +14,7 @@ API
 . /1.0/user.deleteShoppingItem      // 删除购物车物品
 . /1.0/user.getShoppingItem         // 获取购物车信息
 . /1.0/order.create                 // 生成订单
+x /1.0/order.cancel                 // 未支付订单取消，取消后优惠码将可以继续使用
 . /1.0/answerSheet.create           // 生成问卷
 . /1.0/promotionCode.draw           // 抽取优惠码
 ```
@@ -448,16 +449,25 @@ POST /1.0/order.create
 
 #### Request
 
+> example
+1. 不填优惠码
 ```json
 {
 	"promotionCode": "",
 	"addressID": "5b6fc690556edf1abcb383fe"
 }
 ```
+2. 填写优惠码
+```json
+{
+    "promotionCode"
+}
+```
 
 #### Response
 
 >example
+1. 不填写优惠码
 ```json
 {
     "data": {
@@ -471,17 +481,22 @@ POST /1.0/order.create
     "success": true
 }
 ```
+2. 填写优惠码
 
 ### AnswerSheet create
 
 POST /answerSheet.create
 
+#### Notice
+
+问卷每个用户只能填写一次，创建问卷后，你有一次抽奖的机会，请调用抽奖的接口
+
 #### Request
 >example
 ```json
 {
-	"quiz_1": 97, // ASCII码 97代表'a'
-	"quiz_2": 97,
+	"quiz_1": [97,98], // ASCII码 97代表'a' 传一个数组就行的 多选题
+	"quiz_2": [97,98],
 	"quiz_3": 97,
 	"quiz_4": 97
 }
