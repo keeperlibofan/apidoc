@@ -370,7 +370,7 @@ null
 }
 ```
 
-### add shopping item
+### Add shopping item
 
 POST /1.0/user.addShoppingItem
 
@@ -395,7 +395,7 @@ POST /1.0/user.addShoppingItem
 }
 ```
 
-### delete shopping item
+### Delete shopping item
 
 POST /1.0/user.deleteShoppingItem
 
@@ -416,7 +416,7 @@ POST /1.0/user.deleteShoppingItem
 }
 ```
 
-### get shopping items
+### Get shopping items
 
 GET /1.0/user.getShoppingItem         // 获取购物车信息
 
@@ -453,6 +453,7 @@ POST /1.0/order.create
 1. 不填优惠码
 ```json
 {
+    "indexes": [1,2,3], // 获取index为1,2,3的三个购物车商品
 	"promotionCode": "",
 	"addressID": "5b6fc690556edf1abcb383fe"
 }
@@ -460,7 +461,9 @@ POST /1.0/order.create
 2. 填写优惠码
 ```json
 {
-    "promotionCode"
+    "indexes": [1,2,3],  // 获取index为1,2,3的三个购物车商品
+    "promotionCode": "",
+    "addressID": "5b6fc690556edf1abcb383fe"
 }
 ```
 
@@ -471,17 +474,26 @@ POST /1.0/order.create
 ```json
 {
     "data": {
-        "nonceStr": "s0JjumDj7UMxsKTh",
-        "package": "prepay_id=wx201120244253696dc31ea8312655009410",
-        "paySign": "014CF4F5E278CED6F55139A2073D66F5",
+        "nonceStr": "VRp3nfz1nLyrfY0I",
+        "package": "prepay_id=prepay_id=wx29191544652099c9aa2e13fd4254848493",
+        "paySign": "84C122B61C7AA5E29A7881FFE432D0C1",
         "signType": "MD5",
-        "timeStamp": 1534735224
+        "timeStamp": "1538219743"
     },
     "error": "",
     "success": true
 }
 ```
 2. 填写优惠码
+```json
+{
+    "data": {
+
+    }
+    "error": "",
+    "success": true
+}
+```
 
 ### AnswerSheet create
 
@@ -539,5 +551,3 @@ no param
     "success": true
 }
 ```
-
-

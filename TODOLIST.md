@@ -4,9 +4,10 @@
 - [ ] 抽象出第一个微服务 fitter-lottery-service.为什么要先抽象出这个服务，因为这个最简单
     - [x] consul安装
     - [x] 书写服务
-    - [ ] ...
+    - [x] lottery-service 实验成功
+    - [ ] lottery-service 搭建完成，剔除app中所有
 
-- [ ] 使用docker搭建mongodb集群
+- [x] 使用docker搭建mongodb集群
 - [ ] acme.sh 配合 letsencrypt 配置泛域名
     - 配置出 *.3dfitter.cn的泛域名 全站https化
 - [ ] Nginx 设置用户认证
