@@ -45,16 +45,20 @@ Params:
 ```json
 {
     "data": {
-        "_id": "5b6a51e9556edf1f3d6c8577",
-        "openID": "o69nx5GujZFgB2TrZ7PRo0luTD6o",
-        "name": "ボー",
-        "weixinNickname": "ボー",
-        "headImg": "https://wx.qlogo.cn/mmopen/vi_32/zcFiaYibsHnfAAvVNmhiauX6wdRuCBrAvTBUso5DDMG7iaUo42rFyyclPD6ZjiaRIkvVVPQL8qPibl6m2vIiclH1fibLkA/132",
-        "personalPageImg": "https://wx.qlogo.cn/mmopen/vi_32/zcFiaYibsHnfAAvVNmhiauX6wdRuCBrAvTBUso5DDMG7iaUo42rFyyclPD6ZjiaRIkvVVPQL8qPibl6m2vIiclH1fibLkA/132",
-        "gender": 1,
-        "weixinCity": "Los Angeles City",
-        "weixinProvince": "California",
-        "weixinCountry": ""
+        "csrf_token": "",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDA3OTgxMjQsIm9wZW5pZCI6Im82OW54NUd1alpGZ0IyVHJaN1BSbzBsdVRENm8iLCJzZXNzaW9uX2tleSI6InNtWCtPV2R6dDUybGNoOUhVazgvMlE9PSJ9.sz2EmJ6MOvwDdXvtpIwT6KmFOpCCoKG46OQLTGh5cKE",
+        "user": {
+            "_id": "5b7cd08f556edf7ef5cca544",
+            "gender": 1,
+            "headImg": "https://wx.qlogo.cn/mmopen/vi_32/zcFiaYibsHnfAAvVNmhiauX6wdRuCBrAvTBUso5DDMG7iaUo42rFyyclPD6ZjiaRIkvVVPQL8qPibl6m2vIiclH1fibLkA/132",
+            "name": "ボー",
+            "openID": "o69nx5GujZFgB2TrZ7PRo0luTD6o",
+            "personalPageImg": "https://wx.qlogo.cn/mmopen/vi_32/zcFiaYibsHnfAAvVNmhiauX6wdRuCBrAvTBUso5DDMG7iaUo42rFyyclPD6ZjiaRIkvVVPQL8qPibl6m2vIiclH1fibLkA/132",
+            "weixinCity": "Los Angeles City",
+            "weixinCountry": "",
+            "weixinNickname": "ボー",
+            "weixinProvince": "California"
+        }
     },
     "error": "",
     "success": true

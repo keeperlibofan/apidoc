@@ -5,16 +5,26 @@
     - [x] consul安装
     - [x] 书写服务
     - [x] lottery-service 实验成功
-    - [ ] lottery-service 搭建完成，剔除app中所有
-
-- [x] 使用docker搭建mongodb集群
+    - [x] lottery-service 搭建完成，剔除app中所有
+    - [ ] lottery-service 是否需要一个独立的数据库
+- [ ] 订单部分需要写一个定时器,长时间没有支付的订单可能需要转移状态
+- [ ] 使用docker搭建mongodb集群
+    - 后端数据库集群没有搭建成功，是否需要用到docker-compose内置的deploy字段
 - [ ] acme.sh 配合 letsencrypt 配置泛域名
     - 配置出 *.3dfitter.cn的泛域名 全站https化
 - [ ] Nginx 设置用户认证
+- [ ] 配置生成免密码登录服务器
 - [ ] mongo 数据备份
 - [ ] 搭建ngrok实现内网穿透
-- [ ] 全部docker容器化
-
+- [x] 全部docker容器化
+- [ ] 通过虚拟IP访问宿主机上的服务
+- [ ] API自动生成走一波
+- [ ] docker日志收集
+- [ ] 需不需要protobuf化
+- [ ] Redis将用户数据和缓存中的对比，使用场景，当用户更新头像的时候
+- [ ] 对前端的请求参数进行 validate query
+- [ ] 对前端请求的参数拆散成可拼装的结构体
+- [ ] 从配置json文件里面去读取配置，比方说算法服务地址
 ### 之后的操作
 - [ ] 前端持续集成 jenkins
 - [ ] 后端服务报警系统 sentry
